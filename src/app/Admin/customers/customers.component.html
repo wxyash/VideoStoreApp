@@ -1,0 +1,65 @@
+<div class="col-sm">
+   <div class="container">
+      <br />
+      <div class="row justify-content-center">
+         <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+               <div class="card-body row no-gutters align-items-center">
+                  <div class="col-auto">
+                     <i class="fas fa-search h4 text-body"></i>
+                  </div>
+                  <div class="col">
+                     <form id="filter">
+                            <input [(ngModel)]="filterargs" name="filter" class="form-control form-control-lg form-control-borderless" type="search"
+                                placeholder="Search Customers">
+                        </form>
+                  </div>
+
+               </div>
+            </form>
+         </div>
+         <div class="container mt-5">
+            <div class="row">
+               <div class="col">
+                  <ul class="nav nav-pills nav-fill">
+                     <li class="nav-item">
+                        <a [routerLink]="['/mainAdmin']" class="nav-link border border-primary" href="#">Videos</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="col">
+                  <ul class="nav nav-pills nav-fill">
+                     <li class="nav-item">
+                        <a  [routerLink]="['/customers']" class="nav-link  active" >Customers</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="col-lg p-5">
+   <table class="table">
+      <thead class="thead-dark">
+         <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Status</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let data of customers | filter : filterargs">
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.city}}</td>
+            <td>{{data.phoneNumber}}</td>
+            <td>{{data.status}}</td>
+         </tr>
+      </tbody>
+   </table>
+</div>

@@ -1,0 +1,27 @@
+<div class="container col-sm-4 mt-5 p-5 ">
+   <div [hidden]="!submitted" class="col text-center">
+      <h4 class="text-danger m-3"> Username/Password was incorrect. Please try again!</h4>
+   </div>
+     <div [hidden]="this.message !='Faliure'" class="col text-center">
+      <h4 class="text-danger m-3"> Access denied!. Please Login</h4>
+   </div>
+   <form (ngSubmit)="onSubmit(userName,password)" #loginForm="ngForm" class="form-signin">
+   <h2 class="form-signin-heading">Please sign in</h2>
+   <label >Email address</label>
+   <input type="text" class="form-control" id="userName" required [ngModel]="username" #userName="ngModel" name="name" placeholder="Enter your user name">
+   <div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">
+      User name is required
+   </div>
+   <label>Password</label>
+   <input type="text" class="form-control" id="password" required [ngModel]="passwd" #password="ngModel" name="password" placeholder="Enter your password" type="password">
+   <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+      Password is required
+   </div>
+   <div class="checkbox">
+      <label>
+      <input type="checkbox" value="remember-me"> Remember me
+      </label>
+   </div>
+   <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+   </form>
+</div>
