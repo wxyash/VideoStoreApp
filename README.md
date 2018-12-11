@@ -9,6 +9,6 @@
 # Login Credentials
 
 | email     | password |
-| ------------- |:-------------:||
+| ------------- |-------------|
 | admin@abc.com    | admin  |
 | admin     | admin  |
